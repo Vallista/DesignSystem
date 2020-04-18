@@ -22,7 +22,9 @@ export enum Sort {
   CENTER_RIGHT = 23,
   BOTTOM_LEFT = 31,
   BOTTOM_CENTER = 32,
-  BOTTOM_RIGHT = 33
+  BOTTOM_RIGHT = 33,
+  SPACE_BETWEEN = 40,
+  SPACE_AROUND = 50,
 }
 
 interface IProps extends IComponentProps {
@@ -42,6 +44,8 @@ const CalculateSort = (sort: Sort): string[] => {
 
   if (horizontalNumber === 1) horizontal = 'flex-start'
   else if (horizontalNumber === 3) horizontal = 'flex-end'
+  else if (horizontalNumber === 4) horizontal = 'space-between'
+  else if (horizontalNumber === 5) horizontal = 'space-around'
 
   if (verticalNumber === 1) vertical = 'flex-start'
   else if (verticalNumber === 3) vertical = 'flex-end'
