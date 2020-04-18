@@ -17,8 +17,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "storybook": "start-storybook",
-    "start": "react-scripts start"
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"

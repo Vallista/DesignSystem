@@ -18,10 +18,10 @@ $ npm install
 
 ```bash
 # using yarn
-$ yarn start
+$ yarn storybook
 
 # using npm
-$ npm run start
+$ npm run storybook
 ```
 
 ## Description
