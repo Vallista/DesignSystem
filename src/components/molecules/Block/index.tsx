@@ -1,6 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 
+import { IComponentProps } from '../../../models/common'
+import { CalculateBox } from '../../../utils'
+
 import styles from './style.module.scss'
 
 export enum Direction {
@@ -22,9 +25,8 @@ export enum Sort {
   BOTTOM_RIGHT = 33
 }
 
-interface IProps {
+interface IProps extends IComponentProps {
   children: React.ReactNode
-  className?: string
   direction?: Direction
   sort?: Sort
   margin?: [number, number?, number?, number?]
@@ -47,21 +49,6 @@ const CalculateSort = (sort: Sort): string[] => {
   return [ horizontal, vertical ]
 }
 
-const ShiftArr = (targetArr: [number, number?, number?, number?]): [number, number, number, number] => {
-  let resultArr: [number, number, number, number] = [targetArr[0], targetArr[0], targetArr[0], targetArr[0]]
-
-  const CountNull = targetArr.reduce<number>((acc, curr) => { if (!!curr) return acc + 1;  return acc }, 0)
-
-  if (CountNull === 2) {
-    targetArr[1] && (resultArr = [targetArr[0], targetArr[1], targetArr[0], targetArr[1]])
-  } else if (CountNull === 3) {
-    (targetArr[1] && targetArr[2]) && (resultArr = [targetArr[0], targetArr[1], targetArr[2], targetArr[1]])
-  } else if (!targetArr[3]) {
-    (targetArr[1] && targetArr[2] && targetArr[3]) && (resultArr = [targetArr[0], targetArr[1], targetArr[2], targetArr[3]])
-  }
-  
-  return resultArr
-}
 
 const Block: React.FC<IProps> = ({ children, className, direction = Direction.ROW, sort = Sort.CENTER_CENTER, margin = [0], padding = [0] }) => {
   const classProps = classNames(styles.default, className)
@@ -71,7 +58,7 @@ const Block: React.FC<IProps> = ({ children, className, direction = Direction.RO
   const justifyContent = direction === Direction.ROW ? horizontal : vertical
   const alignItems = direction === Direction.ROW ? vertical : horizontal
 
-  const styleProps = { justifyContent, alignItems, margin: ShiftArr(margin).toString(), padding: ShiftArr(padding).toString() }
+  const styleProps = { justifyContent, alignItems, margin: CalculateBox(margin).toString(), padding: CalculateBox(padding).toString() }
 
   return (
     <div className={classProps} style={styleProps}>

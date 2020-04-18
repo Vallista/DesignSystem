@@ -1,9 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import styles from 'style.module.scss'
-
 import { IComponentProps } from '../../../models/common'
+
+import styles from 'style.module.scss'
 
 export enum InputType {
   BUTTON = 'button',
@@ -24,7 +24,6 @@ export enum InputType {
 }
 
 interface IProps extends IComponentProps {
-  className?: string
   value: string | number
   type?: InputType
   onChange?(event: React.ChangeEvent<HTMLInputElement>): void

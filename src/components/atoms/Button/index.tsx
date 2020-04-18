@@ -1,6 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 
+import { IComponentProps } from '../../../models/common'
+
 import styles from './style.module.scss'
 
 export enum ButtonType {
@@ -9,7 +11,7 @@ export enum ButtonType {
   RESET = 'reset'
 }
 
-interface IProps {
+interface IProps extends IComponentProps {
   isCapture?: boolean
   onClick?(event: React.MouseEvent<HTMLButtonElement>): void
   type?: ButtonType
