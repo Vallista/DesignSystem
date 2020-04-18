@@ -1,44 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Design System for VallistA
 
-## Available Scripts
+VallistA (마광휘)의 개인 개발 컴포넌트를 모아두는 저장소 입니다.
 
-In the project directory, you can run:
+아토믹 디자인으로 공용 컴포넌트를 구현했으며, 레이아웃 컴포넌트를 Storybook으로 관리합니다.
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+# using yarn
+$ yarn
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# using npm
+$ npm install
+```
 
-### `yarn test`
+## Usage
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# using yarn
+$ yarn start
 
-### `yarn build`
+# using npm
+$ npm run start
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Description
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+프로젝트는 크게 **src/components**와 **src/products** 폴더로 구분됩니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### src/components
 
-### `yarn eject`
+components는 상용에 쓰일 레이아웃 컴포넌트를 제작할 공용 요소를 담는 공간입니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+아토믹 디자인으로 되어 있으며, 해당 컴포넌트가 대외로 쓰이지 않습니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### src/products
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+src/components 파일로 구현한 상용에 쓰일 레이아웃 컴포넌트 꾸러미 입니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+결과물을 리스팅하며, 해당 컴포넌트를 이용해서 VallistA(마광휘)의 프로젝트에 쓰입니다.
