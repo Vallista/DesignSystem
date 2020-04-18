@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { IComponentProps } from '../../../models/common'
+import { IComponentProps } from 'models/common'
 
 import styles from 'style.module.scss'
 
