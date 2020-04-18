@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { IComponentProps } from '../../../models/common'
-import { CalculateBox } from '../../../utils'
+import { IComponentProps } from 'models/common'
+import { CalculateBox } from 'utils'
 
 import styles from './style.module.scss'
 

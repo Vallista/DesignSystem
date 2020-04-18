@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import Block, { Direction, Sort } from '../../molecules/Block'
-import { IComponentProps } from '../../../models/common'
+import Block, { Direction, Sort } from 'components/molecules/Block'
+import { IComponentProps } from 'models/common'
 
 import styles from './style.module.scss'
 
