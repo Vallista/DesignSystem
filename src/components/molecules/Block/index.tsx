@@ -23,6 +23,7 @@ export enum Sort {
 }
 
 interface IProps {
+  children: React.ReactNode
   className?: string
   direction?: Direction
   sort?: Sort
