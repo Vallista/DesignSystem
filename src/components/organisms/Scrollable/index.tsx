@@ -54,7 +54,9 @@ const Scrollable: React.FC<IProps> = ({
       >
         <Block sort={Sort.TOP_LEFT}
         direction={scrollType === ScrollType.HORIZONTAL ? Direction.ROW : Direction.COLUMN}
-        padding={innerPadding}>{children}</Block>
+        padding={innerPadding}>
+          {children}
+        </Block>
       </Block>
     </Block>
   )
