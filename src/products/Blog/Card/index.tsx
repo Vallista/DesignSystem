@@ -6,21 +6,22 @@ import Span from 'components/atoms/Span'
 import Block, { Direction, Sort } from 'components/molecules/Block'
 import Card from 'components/molecules/Card'
 
-import { ColorPalette } from '../../../models/color'
+import { ColorPalette } from 'models/color'
 
 import styles from './style.module.scss'
 
 import WatchIcon from 'assets/eyes-icon.svg'
 
 interface IProps {
+  className?: string
   image: string
   title: string
   description: string
   viewCount: number
 }
 
-const BlogCard: React.FC<IProps> = ({ image, title, description, viewCount }) => {
-  const classProps = classNames(styles.cardWrap)
+const BlogCard: React.FC<IProps> = ({ className, image, title, description, viewCount }) => {
+  const classProps = classNames(className, styles.cardWrap)
   const styleProps = {
     backgroundImage: `url('${image}')`
   }
