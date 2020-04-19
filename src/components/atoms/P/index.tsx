@@ -7,17 +7,32 @@ import { CalculateBox } from 'utils/'
 
 import styles from './style.module.scss'
 
+export enum WordBreak {
+  KEEP = 'keep-all',
+  BREAK = 'break-all'
+}
+
+export enum WhiteSpace {
+  NORMAL = 'normal',
+  NOWRAP = 'nowrap',
+  PRE = 'pre',
+  PRE_LINE = 'pre-line',
+  PRE_WRAP = 'pre-wrap'
+}
+
 interface IProps extends IComponentProps {
   children: React.ReactNode
   lineHeight?: number
   weight?: number
   color?: ColorType
   margin?: [number, number?, number?, number?]
+  wordBreak?: WordBreak
+  whiteSpace?: WhiteSpace
 }
 
-const P: React.FC<IProps> = ({ className, children, color = ColorPalette.Black.BLACK, weight = 300, lineHeight = 1, margin = [0] }) => {
+const P: React.FC<IProps> = ({ className, children, color = ColorPalette.Black.BLACK, weight = 300, lineHeight = 1, margin = [0], wordBreak = WordBreak.KEEP, whiteSpace = WhiteSpace.NORMAL }) => {
   const classProps = classNames(styles.default, className)
-  const styleProps = { color, fontWeight: weight, lineHeight, margin: CalculateBox(margin) }
+  const styleProps = { color, fontWeight: weight, lineHeight, margin: CalculateBox(margin), wordBreak, whiteSpace }
 
   return <p className={classProps} style={styleProps}>{children}</p>
 }
