@@ -48,7 +48,11 @@ export enum BLUE {
   LIGHT = '#add8e6'
 }
 
-export type ColorType = GRAY | BLACK | WHITE | RED | GREEN | BLUE
+export enum GRADIENT {
+  RED_TO_YELLOW = 'linear-gradient(90deg, rgba(194,65,119,1) 0%, rgba(239,125,96,1) 100%)'
+}
+
+export type ColorType = GRAY | BLACK | WHITE | RED | GREEN | BLUE | GRADIENT
 
 export const ColorPalette = {
   Gray: GRAY,
@@ -56,5 +60,6 @@ export const ColorPalette = {
   Black: BLACK,
   Red: RED,
   Blue: BLUE,
-  Green: GREEN
+  Green: GREEN,
+  Gradient: GRADIENT
 }
