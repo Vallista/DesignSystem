@@ -49,7 +49,7 @@ export enum BLUE {
 }
 
 export enum GRADIENT {
-  RED_TO_YELLOW = 'linear-gradient(90deg, rgba(194,65,119,0.8) 0%, rgba(239,125,96,0.8) 100%)'
+  RED_TO_YELLOW = 'linear-gradient(90deg, rgba(194,65,119,0.9) 0%, rgba(239,125,96,0.9) 100%)'
 }
 
 export type ColorType = GRAY | BLACK | WHITE | RED | GREEN | BLUE | GRADIENT
