@@ -10,9 +10,9 @@ interface IProps extends IComponentProps {
   radius?: [number, number?, number?, number?]
 }
 
-const Card: React.FC<IProps> = ({ className, radius = [0], padding = [0] }) => {
+const Card: React.FC<IProps> = ({ className, radius = [0], padding = [0], style }) => {
   const classProps = classNames(className, styles.default)
-  const styleProps = { borderRadius: CalculateBox(radius), padding: CalculateBox(padding) }
+  const styleProps = { ...style, borderRadius: CalculateBox(radius), padding: CalculateBox(padding) }
 
   return <div className={classProps} style={styleProps} />
 }
