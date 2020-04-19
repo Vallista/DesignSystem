@@ -69,6 +69,7 @@ const Block: React.FC<IProps> = ({
 
   const styleProps = {
     ...style,
+    flexDirection: direction,
     justifyContent,
     alignItems,
     margin: CalculateBox(margin),
