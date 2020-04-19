@@ -8,7 +8,6 @@ import styles from './style.module.scss'
 
 interface IProps extends IComponentProps {
   radius?: [number, number?, number?, number?]
-  padding?: [number, number?, number?, number?]
 }
 
 const Card: React.FC<IProps> = ({ className, radius = [0], padding = [0] }) => {

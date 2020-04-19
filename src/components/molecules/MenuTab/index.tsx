@@ -20,7 +20,7 @@ export interface IMenuItem {
 
 interface IProps extends IComponentProps {
   items: IMenuItem[]
-  style?: MenuStyle
+  menuStyle?: MenuStyle
 }
 
 interface IItemProps {
@@ -41,11 +41,11 @@ const MenuTabItem: React.FC<IItemProps> = ({ children, distance, className }) =>
   )
 }
 
-const MenuTab: React.FC<IProps> = ({ className, items, style = MenuStyle.ROW }) => {
+const MenuTab: React.FC<IProps> = ({ className, items, menuStyle = MenuStyle.ROW }) => {
   const classProps = classNames(styles.default, className)
   const styleProps = {
-    flexDirection: style,
-    justifyContent: style === MenuStyle.ROW ? 'center' : 'flex-start',
+    flexDirection: menuStyle,
+    justifyContent: menuStyle === MenuStyle.ROW ? 'center' : 'flex-start',
     alignItems: 'center'
   }
 

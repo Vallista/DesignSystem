@@ -24,15 +24,13 @@ export enum Sort {
   BOTTOM_CENTER = 32,
   BOTTOM_RIGHT = 33,
   SPACE_BETWEEN = 40,
-  SPACE_AROUND = 50,
+  SPACE_AROUND = 50
 }
 
 interface IProps extends IComponentProps {
   children: React.ReactNode
   direction?: Direction
   sort?: Sort
-  margin?: [number, number?, number?, number?]
-  padding?: [number, number?, number?, number?]
 }
 
 const CalculateSort = (sort: Sort): string[] => {
@@ -53,8 +51,15 @@ const CalculateSort = (sort: Sort): string[] => {
   return [ horizontal, vertical ]
 }
 
-
-const Block: React.FC<IProps> = ({ children, className, direction = Direction.ROW, sort = Sort.CENTER_CENTER, margin = [0], padding = [0] }) => {
+const Block: React.FC<IProps> = ({
+  children,
+  className,
+  direction = Direction.ROW,
+  sort = Sort.CENTER_CENTER,
+  margin = [ 0 ],
+  padding = [ 0 ],
+  style
+}) => {
   const classProps = classNames(styles.default, className)
 
   const [ horizontal, vertical ] = CalculateSort(sort)
@@ -62,7 +67,13 @@ const Block: React.FC<IProps> = ({ children, className, direction = Direction.RO
   const justifyContent = direction === Direction.ROW ? horizontal : vertical
   const alignItems = direction === Direction.ROW ? vertical : horizontal
 
-  const styleProps = { justifyContent, alignItems, margin: CalculateBox(margin), padding: CalculateBox(padding) }
+  const styleProps = {
+    ...style,
+    justifyContent,
+    alignItems,
+    margin: CalculateBox(margin),
+    padding: CalculateBox(padding)
+  }
 
   return (
     <div className={classProps} style={styleProps}>
