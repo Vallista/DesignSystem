@@ -5,5 +5,6 @@ module.exports = [
     options: {
       tsDocgenLoaderOptions: {}
     }
-  }
+  },
+  '@storybook/addon-knobs/register'
 ]
