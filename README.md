@@ -91,7 +91,7 @@ module.exports = [
 ]
 ```
 
-presets.ts 파일에는 다양한 addon file(storybook의 모듈을 addon 이라 합니다.)을 사용할 때마다 import를 해주어 실제 storybook에서 사용할 수 있도록 해줍니다.
+presets.ts 파일에는 다양한 presets file을 사용할 때마다 import를 해주어 실제 storybook에서 사용할 수 있도록 해줍니다.
 현재는 storybook/preset-create-react-app 밖에 없으므로 해당 모듈을 추가해줍니다.
 
 #### Run
