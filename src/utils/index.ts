@@ -11,5 +11,5 @@ export function CalculateBox(targetArr: [number, number?, number?, number?]): st
     (targetArr[1] && targetArr[2] && targetArr[3]) && (resultArr = [targetArr[0], targetArr[1], targetArr[2], targetArr[3]])
   }
   
-  return resultArr.toString()
+  return `${resultArr.toString().replace(/,/gi, 'px ')}px`
 }
