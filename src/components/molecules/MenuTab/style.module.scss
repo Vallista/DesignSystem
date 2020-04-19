@@ -1,0 +1,16 @@
+.default {
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  & .menuItem {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
