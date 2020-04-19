@@ -35,7 +35,7 @@ interface IProps extends IComponentProps {
 
 const CalculateSort = (sort: Sort): string[] => {
   const horizontalNumber = sort % 10
-  const verticalNumber = sort / 10
+  const verticalNumber = Math.floor(sort / 10)
 
   let horizontal = 'center'
   let vertical = 'center'
