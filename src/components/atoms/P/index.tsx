@@ -43,7 +43,7 @@ const P: React.FC<IProps> = ({
   children,
   color = ColorPalette.Black.BLACK,
   weight = 300,
-  lineHeight = 1,
+  lineHeight = 1.1,
   margin = [ 0 ],
   wordBreak = WordBreak.KEEP,
   whiteSpace = WhiteSpace.NORMAL,
