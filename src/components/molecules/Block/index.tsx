@@ -62,7 +62,7 @@ const Block: React.FC<IProps> = ({ children, className, direction = Direction.RO
   const justifyContent = direction === Direction.ROW ? horizontal : vertical
   const alignItems = direction === Direction.ROW ? vertical : horizontal
 
-  const styleProps = { justifyContent, alignItems, margin: CalculateBox(margin).toString(), padding: CalculateBox(padding).toString() }
+  const styleProps = { justifyContent, alignItems, margin: CalculateBox(margin), padding: CalculateBox(padding) }
 
   return (
     <div className={classProps} style={styleProps}>

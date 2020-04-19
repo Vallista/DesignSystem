@@ -1,4 +1,4 @@
-export function CalculateBox(targetArr: [number, number?, number?, number?]): [number, number, number, number] {
+export function CalculateBox(targetArr: [number, number?, number?, number?]): string {
   let resultArr: [number, number, number, number] = [targetArr[0], targetArr[0], targetArr[0], targetArr[0]]
 
   const CountNull = targetArr.reduce<number>((acc, curr) => { if (!!curr) return acc + 1;  return acc }, 0)
@@ -11,5 +11,5 @@ export function CalculateBox(targetArr: [number, number?, number?, number?]): [n
     (targetArr[1] && targetArr[2] && targetArr[3]) && (resultArr = [targetArr[0], targetArr[1], targetArr[2], targetArr[3]])
   }
   
-  return resultArr
+  return resultArr.toString()
 }
