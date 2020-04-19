@@ -50,10 +50,11 @@ const Scrollable: React.FC<IProps> = ({
       {header}
       <Block
         className={contentsClassProps}
-        direction={scrollType === ScrollType.HORIZONTAL ? Direction.ROW : Direction.COLUMN}
         style={styleProps}
       >
-        <Block sort={Sort.TOP_LEFT} padding={innerPadding}>{children}</Block>
+        <Block sort={Sort.TOP_LEFT}
+        direction={scrollType === ScrollType.HORIZONTAL ? Direction.ROW : Direction.COLUMN}
+        padding={innerPadding}>{children}</Block>
       </Block>
     </Block>
   )
