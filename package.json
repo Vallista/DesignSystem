@@ -23,10 +23,19 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [ ">0.2%", "not dead", "not op_mini all" ],
-    "development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
+    "@storybook/addon-backgrounds": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
