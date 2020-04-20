@@ -2,7 +2,7 @@ import React from 'react'
 
 import P from 'components/atoms/P'
 import Block, { Sort } from 'components/molecules/Block'
-import Scrollable, { ViewType, ScrollType } from 'components/organisms/Scrollable'
+import Scrollable, { ViewType } from 'components/organisms/Scrollable'
 
 import { ColorPalette } from 'models/color'
 
@@ -40,16 +40,7 @@ const TitleList: React.FC<IProps> = ({ list, title }) => {
       padding={[ 24 ]}
       innerPadding={[ 24, 24, 24, 24 ]}
     >
-      {list.map((listItem, idx) => (
-        <Card
-          key={`list-item-${idx}`}
-          className={styles.listItem}
-          title={listItem.title}
-          description={listItem.description}
-          image={listItem.image}
-          viewCount={listItem.viewCount}
-        />
-      ))}
+      {list.map((listItem, idx) => <Card key={`list-item-${idx}`} {...listItem} margin={[ 0, 12, 0, 0 ]} />)}
     </Scrollable>
   )
 }
