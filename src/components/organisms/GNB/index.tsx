@@ -15,7 +15,7 @@ const GNB: React.FC<IProps> = ({ className, left, children, right }) => {
   const classProps = classNames(className, styles.default)
 
   return (
-    <Block className={classProps} direction={Direction.ROW} sort={Sort.SPACE_BETWEEN}>
+    <Block className={classProps} direction={Direction.ROW} sort={Sort.SPACE_BETWEEN_CENTER}>
       <Block sort={Sort.CENTER_LEFT}>{left}</Block>
       <Block>{children}</Block>
       <Block sort={Sort.CENTER_RIGHT}>{right}</Block>
