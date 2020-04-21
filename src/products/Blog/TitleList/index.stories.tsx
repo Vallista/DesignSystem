@@ -2,8 +2,11 @@ import React from 'react'
 import { withKnobs, object, text } from '@storybook/addon-knobs'
 
 import TitleList from './index'
+
 import { ColorPalette } from 'models/color'
-import { ITheme } from '../Card'
+
+import { ITheme as ICardTheme } from '../Card'
+import { ITheme as IListTheme } from '../TitleList'
 
 import { Background } from '../_common'
 
@@ -41,7 +44,14 @@ export const Default = () => {
 }
 
 export const White = () => {
-  const theme: ITheme = {
+  const listTheme: IListTheme = {
+    lineColor: ColorPalette.White.SNOW,
+    textColor: {
+      title: ColorPalette.White.WHITE
+    }
+  }
+
+  const cardTheme: ICardTheme = {
     backgroundColor: ColorPalette.White.WHITE,
     textColor: {
       title: ColorPalette.Black.LIGHT,
@@ -57,14 +67,14 @@ export const White = () => {
         description: '설명',
         image: 'http://img.lifestyler.co.kr/uploads/program/1/1765/menu/2/html/f131755988183457049(0).jpg',
         viewCount: 5,
-        theme: theme
+        theme: cardTheme
       },
       {
         title: '타이틀',
         description: '설명',
         image: 'http://img.lifestyler.co.kr/uploads/program/1/1765/menu/2/html/f131755988183457049(0).jpg',
         viewCount: 5,
-        theme: theme
+        theme: cardTheme
       }
     ]
   }
@@ -74,7 +84,7 @@ export const White = () => {
 
   return (
     <Background background={ColorPalette.Gradient.RED_TO_YELLOW}>
-      <TitleList list={optionWrapper.list} title={title} />
+      <TitleList theme={listTheme} list={optionWrapper.list} title={title} />
     </Background>
   )
 }
