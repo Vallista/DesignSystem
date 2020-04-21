@@ -4,6 +4,8 @@ import { withKnobs, text, number } from '@storybook/addon-knobs'
 import Card, { ITheme } from './index'
 import { ColorPalette } from '../../../models/color'
 
+import { Background } from '../_common'
+
 export default {
   title: 'Card',
   component: Card
@@ -16,17 +18,9 @@ export const Default = () => {
   const viewCount = number('열람 수', 5)
 
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
+    <Background>
       <Card title={title} description={description} image={image} viewCount={viewCount} />
-    </div>
+    </Background>
   )
 }
 
@@ -46,18 +40,9 @@ export const White = () => {
   const viewCount = number('열람 수', 5)
 
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: ColorPalette.Gradient.RED_TO_YELLOW
-      }}
-    >
+    <Background background={ColorPalette.Gradient.RED_TO_YELLOW}>
       <Card title={title} description={description} image={image} viewCount={viewCount} theme={theme} />
-    </div>
+    </Background>
   )
 }
 

@@ -5,6 +5,8 @@ import TitleList from './index'
 import { ColorPalette } from 'models/color'
 import { ITheme } from '../Card'
 
+import { Background } from '../_common'
+
 export default {
   title: 'TitleList',
   component: TitleList
@@ -31,7 +33,11 @@ export const Default = () => {
   const optionWrapper = object('리스트', option)
   const title = text('타이틀', 'Feature')
 
-  return <TitleList list={optionWrapper.list} title={title} />
+  return (
+    <Background>
+      <TitleList list={optionWrapper.list} title={title} />
+    </Background>
+  )
 }
 
 export const White = () => {
@@ -66,7 +72,11 @@ export const White = () => {
   const optionWrapper = object('리스트', option)
   const title = text('타이틀', 'Feature')
 
-  return <TitleList list={optionWrapper.list} title={title} />
+  return (
+    <Background background={ColorPalette.Gradient.RED_TO_YELLOW}>
+      <TitleList list={optionWrapper.list} title={title} />
+    </Background>
+  )
 }
 
 Default.story = {
