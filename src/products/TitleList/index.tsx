@@ -8,7 +8,7 @@ import { ColorPalette } from 'models/color'
 import { IProductProps } from 'models/product'
 import { ColorType } from 'models/color'
 
-import Card from 'products/Blog/Card'
+import Card from 'products/Card'
 
 import styles from './style.module.scss'
 

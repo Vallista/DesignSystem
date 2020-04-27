@@ -29,10 +29,10 @@ const Sidebar: React.FC<IProps> = ({ head, value, config }) => {
   )
 
   return (
-    <Block direction={Direction.COLUMN}>
-      {head}
+    <div>
+      <Block>{head}</Block>
       <NowComponent />
-    </Block>
+    </div>
   )
 }
 

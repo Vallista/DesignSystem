@@ -6,12 +6,12 @@ import TitleList from './index'
 import { ColorPalette } from 'models/color'
 
 import { ITheme as ICardTheme } from '../Card'
-import { ITheme as IListTheme } from '../TitleList'
+import { ITheme as IListTheme } from '.'
 
 import { Background } from '../_common'
 
 export default {
-  title: 'TitleList',
+  title: 'Products|TitleList',
   component: TitleList
 }
 

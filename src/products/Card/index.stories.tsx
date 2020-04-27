@@ -2,12 +2,12 @@ import React from 'react'
 import { withKnobs, text, number } from '@storybook/addon-knobs'
 
 import Card, { ITheme } from './index'
-import { ColorPalette } from '../../../models/color'
+import { ColorPalette } from '../../models/color'
 
 import { Background } from '../_common'
 
 export default {
-  title: 'Card',
+  title: 'Products|Card',
   component: Card
 }
 
