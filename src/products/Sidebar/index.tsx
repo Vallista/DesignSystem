@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 
-import Block, { Direction } from 'components/molecules/Block'
-import P from 'components/atoms/P'
+import Block, { Direction, Sort } from 'components/molecules/Block'
+import Span from 'components/atoms/Span'
 
 import { IProductProps } from '../../models/product'
 
@@ -49,20 +49,27 @@ const Sidebar: React.FC<IProps> = ({ head, value, config, className }) => {
   )
 
   const SidebarItem = ({ selected = false, name }: { selected: boolean; name: string }) => {
-    const classProps = classNames(styles.item, selected ? styles.selected : '')
-
     return (
-      <Block className={classProps} margin={[ 0, 0, 24, 0 ]}>
-        <P className={styles.text} size={18}>
+      <Block className={styles.item} margin={[ 0, 0, 24, 0 ]}>
+        <Span
+          className={styles.text}
+          size={18}
+          style={{ color: selected ? ColorPalette.Red.RED : ColorPalette.Gray.DARK }}
+        >
           {name}
-        </P>
+        </Span>
       </Block>
     )
   }
 
   return (
-    <Block className={classProps}>
-      <Card className={styles.sidebarWrapper} radius={[ 12 ]} style={{ background: defaultTheme.background }}>
+    <Block className={classProps} direction={Direction.ROW} sort={Sort.TOP_LEFT}>
+      <Card
+        className={styles.sidebarWrapper}
+        radius={[ 12 ]}
+        style={{ background: defaultTheme.background }}
+        margin={[ 0, 50, 0, 0 ]}
+      >
         <Block direction={Direction.COLUMN} className={styles.sidebar} padding={[ 24 ]}>
           {head}
           <Block direction={Direction.COLUMN} className={styles.list}>
