@@ -51,11 +51,7 @@ const Sidebar: React.FC<IProps> = ({ head, value, config, className }) => {
   const SidebarItem = ({ selected = false, name }: { selected: boolean; name: string }) => {
     return (
       <Block className={styles.item} margin={[ 0, 0, 24, 0 ]}>
-        <Span
-          className={styles.text}
-          size={18}
-          style={{ color: selected ? ColorPalette.Red.RED : ColorPalette.Gray.DARK }}
-        >
+        <Span className={styles.text} size={18} color={selected ? ColorPalette.Red.RED : ColorPalette.Gray.DARK}>
           {name}
         </Span>
       </Block>
