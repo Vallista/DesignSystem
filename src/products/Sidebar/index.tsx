@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 
-import Block, { Direction, Sort } from 'components/molecules/Block'
 import Span from 'components/atoms/Span'
+import Block, { Direction, Sort } from 'components/molecules/Block'
+import Card from 'components/molecules/Card'
+import A from 'components/molecules/A'
 
-import { IProductProps } from '../../models/product'
+import { IProductProps } from 'models/product'
 
 import styles from './style.module.scss'
 import { ColorPalette, ColorType } from '../../models/color'
-import Card from 'components/molecules/Card'
 
 export interface ISidebarComponentProps {}
 
@@ -48,12 +49,18 @@ const Sidebar: React.FC<IProps> = ({ head, value, config, className }) => {
     [ value ]
   )
 
-  const SidebarItem = ({ selected = false, name }: { selected: boolean; name: string }) => {
+  const SidebarItem = (conf: ISidebar, selected: boolean) => {
     return (
       <Block className={styles.item} margin={[ 0, 0, 24, 0 ]}>
-        <Span className={styles.text} size={18} color={selected ? ColorPalette.Red.RED : ColorPalette.Gray.DARK}>
-          {name}
-        </Span>
+        <A
+          onClick={() => {
+            setTarget(conf)
+          }}
+        >
+          <Span className={styles.text} size={18} color={selected ? ColorPalette.Red.RED : ColorPalette.Gray.DARK}>
+            {conf.name}
+          </Span>
+        </A>
       </Block>
     )
   }
@@ -69,7 +76,7 @@ const Sidebar: React.FC<IProps> = ({ head, value, config, className }) => {
         <Block direction={Direction.COLUMN} className={styles.sidebar} padding={[ 24 ]}>
           {head}
           <Block direction={Direction.COLUMN} className={styles.list}>
-            {config.map((conf) => <SidebarItem selected={target.name === conf.name} name={conf.name} />)}
+            {config.map((conf) => SidebarItem(conf, conf.name === target.name))}
           </Block>
         </Block>
       </Card>
@@ -78,4 +85,4 @@ const Sidebar: React.FC<IProps> = ({ head, value, config, className }) => {
   )
 }
 
-export default Sidebar
+export default React.memo(Sidebar)
